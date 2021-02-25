@@ -1,0 +1,40 @@
+GET  http://localhost:3001/api/blogs
+
+
+###
+
+POST  http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjYwMzRhNDlhZDVlZjU1NDU1NGUzNjY4NiIsImlhdCI6MTYxNDEyMzkwNX0.Hm_prix_pKHSNzgRRIRGKIvncyQGmUt5BfluJQ00Eb0
+
+{
+    "title": "Heroku or Amazon Web Services – Which is Best for Your Startup?",
+    "author": "Sviatoslav A.",
+    "url": "https://rubygarage.org/blog/heroku-vs-amazon-web-services",
+    "likes": 100
+}
+
+###
+
+
+POST  http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+    "username": "root1",
+    "name": "superUser",
+    "password": "simplePassword"
+}
+
+
+
+### 
+
+POST  http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+    "username": "root",
+    "password": "simplePassword"
+}
+
