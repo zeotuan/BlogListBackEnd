@@ -1,17 +1,17 @@
-import React from 'react'
+import React from "react"
 
 
 const Notifiction = ({errorMessage}) => {
     
 
-    return(
-        <React.Fragment>
-            {errorMessage && 
+	return(
+		<React.Fragment>
+			{errorMessage && 
                 <div className = 'error'>
-                    {errorMessage}
+                	{errorMessage}
                 </div>}
-        </React.Fragment>
-    )
+		</React.Fragment>
+	)
 }
 
 export default Notifiction
