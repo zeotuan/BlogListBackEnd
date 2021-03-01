@@ -12,7 +12,7 @@ const Note = ({ note,toggleImportance }) => {
 }
 
 
-Note.PropTypes = {
+Note.propTypes = {
   note: PropTypes.shape({
     content: PropTypes.string.isRequired,
     important: PropTypes.bool.isRequired
