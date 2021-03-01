@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react'
-import axios from 'axios'
 import Note from './Components/note'
 import noteServices from './services/note'
 import loginServices from './services/login'
 import Notification from './Components/Notification'
 import LoginForm from './Components/loginForm'
-import noteForm from './Components/NoteForm'
+import NoteForm from './Components/NoteForm'
 import Toggable from './Components/Toggable'
 
 const App = () => {
@@ -55,7 +54,6 @@ const App = () => {
     noteServices.create(noteObject)
       .then(returnedNote => {
         setNotes(notes.concat(returnedNote))
-        setNewNote('')
       })
   }
 
@@ -76,6 +74,7 @@ const App = () => {
         setNotes(notes.map(note => note.id !== id? note : returnedNote))
       })
       .catch(error => {
+        console.log(error)
         setErrorMessage(
           `the note '${note.content}' was already deleted from the server`
         )
@@ -101,18 +100,18 @@ const App = () => {
 
     <div>
       {user === null
-			 	? <Toggable buttonLabel = 'login'>
-					 <LoginForm handleLogin={handleLogin}/>
-				 </Toggable>
+        ?<Toggable buttonLabel = 'login'>
+          <LoginForm handleLogin={handleLogin}/>
+        </Toggable>
 
-			 	: <div>
+        :<div>
 					 <p>{user.name} logged-in</p>
-					 <Toggable buttonLabel = 'new note'>
-					 	<noteForm addNote ={addNote} ref={noteFormRef}/>
+					 <Toggable buttonLabel = 'new note' ref={noteFormRef}>
+					 	<NoteForm addNote ={addNote} />
 					 </Toggable>
 					 <button onClick={handleLogout}>Logout</button>
 				 </div>
-			 }
+      }
       <h1>Notes</h1>
       <Notification message={errorMessage} />
       <div>

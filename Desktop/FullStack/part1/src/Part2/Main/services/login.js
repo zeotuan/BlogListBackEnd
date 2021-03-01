@@ -6,8 +6,5 @@ const login = async (loginDetail) => {
   return response
 }
 
-const logout = async () => {
-
-}
 
 export default { login }
