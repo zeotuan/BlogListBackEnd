@@ -22,6 +22,7 @@ const loginForm = ({ handleLogin }) => {
         <div>
                     username
           <input
+            id='usernameInput'
             type='text'
             value={username}
             name='username'
@@ -30,12 +31,13 @@ const loginForm = ({ handleLogin }) => {
         <div>
                     password
           <input
+            id='passwordInput'
             type='password'
             value={password}
             name='password'
             onChange={(e) => {setPassword(e.target.value)}}/>
         </div>
-        <button type='submit'>Login</button>
+        <button id='login-button'type='submit'>Login</button>
       </form>
     </React.Fragment>
   )
